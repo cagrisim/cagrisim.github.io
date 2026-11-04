@@ -1,0 +1,269 @@
+<title>Çağrı'nın Tüm Dinleme Geçmişi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>/*__CSS__*/</style>
+
+<div lang="tr">
+<header class="hero">
+  <div class="wall" id="wall" aria-hidden="true"></div>
+  <div class="gut hero-pad">
+    <div class="in hero-grid">
+      <div>
+        <p class="k" id="h-range"></p>
+        <h1>ÇAĞRI'NIN<br>TÜM DİNLEME<br>GEÇMİŞİ</h1>
+        <dl class="hero-stats" id="h-stats"></dl>
+      </div>
+      <svg class="tape" viewBox="0 0 640 404" role="img" aria-label="Seçili dönemin kaseti">
+        <defs><clipPath id="win"><rect x="140" y="146" width="360" height="116" rx="58"/></clipPath></defs>
+        <rect x="6" y="6" width="628" height="392" rx="24" fill="#20265c" stroke="#3d4488" stroke-width="2"/>
+        <rect x="38" y="30" width="564" height="262" rx="12" fill="#f1e8d3"/>
+        <g id="t-stripes"></g>
+        <text x="58" y="88" font-family="Caveat,'Segoe Print',cursive" font-weight="700" font-size="60" fill="#1a1c3a">Çağrı</text>
+        <text id="t-year" x="218" y="88" font-family="Caveat,'Segoe Print',cursive" font-weight="700" font-size="44" fill="#1a1c3a"></text>
+        <text id="t-len" x="584" y="62" text-anchor="end" font-family="'Hanken Grotesk',sans-serif" font-weight="600" font-size="17" fill="#5d5c6d"></text>
+        <rect x="140" y="146" width="360" height="116" rx="58" fill="#0b0e26" stroke="#1a1c3a" stroke-width="3"/>
+        <g clip-path="url(#win)">
+          <circle id="r1" class="reel" cx="235" cy="204" r="50" fill="#33241f"/>
+          <circle id="r2" class="reel" cx="405" cy="204" r="30" fill="#33241f"/>
+        </g>
+        <g id="hubs"></g>
+        <path d="M130 398 L160 310 L480 310 L510 398 Z" fill="#181d4a" stroke="#3d4488" stroke-width="2"/>
+        <circle cx="215" cy="358" r="11" fill="#0b0e26"/><circle cx="425" cy="358" r="11" fill="#0b0e26"/><circle cx="288" cy="372" r="6" fill="#0b0e26"/><circle cx="352" cy="372" r="6" fill="#0b0e26"/>
+        <g fill="#0b0e26"><circle cx="24" cy="24" r="6"/><circle cx="616" cy="24" r="6"/><circle cx="24" cy="380" r="6"/><circle cx="616" cy="380" r="6"/></g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<nav class="shelf gut" aria-label="Dönem seç">
+  <div class="in shelf-in">
+    <div class="spines" id="spines"></div>
+    <button class="chip" id="chip" data-do="clearMonth" hidden></button>
+    <div class="jump"><a href="#muzik">Müzik</a><a href="#zaman">Zaman</a><a href="#aliskanlik">Alışkanlık</a><a href="#perde">Perde arkası</a></div>
+  </div>
+</nav>
+
+<main>
+  <section class="cover gut" id="kapak">
+    <div class="in">
+      <div class="cover-grid">
+        <button class="cover-pic" id="cv-pic"></button>
+        <div class="cover-main">
+          <p class="cover-kick" id="cv-share"></p>
+          <h2 id="cv-name"></h2>
+          <p class="cover-sum"><span class="pill" id="cv-period"></span></p>
+          <div class="bigstats" id="cv-stats"></div>
+          <div class="ministats" id="cv-mini"></div>
+        </div>
+      </div>
+      <div class="strip" id="cv-tracks"></div>
+      <div class="strip strip-c" id="cv-artists"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Yedi kaset</h2><span class="k">saat</span></div>
+      <div class="ybars" id="ybars"></div>
+    </div>
+  </section>
+
+  <div class="chap gut" id="muzik"><div class="in"><span class="chap-l">A</span><b>MÜZİK</b></div></div>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Sanatçı evreni</h2><span class="k" id="bub-k"></span></div>
+      <div class="stage" id="bubbles"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Albüm duvarı</h2><span class="k" id="alb-k"></span></div>
+      <div class="stage" id="albums"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head">
+        <h2>En çoklar</h2>
+        <div class="seg" role="group" aria-label="Liste türü">
+          <button class="btn" data-do="tab:ar" id="tab-ar">Sanatçı</button>
+          <button class="btn" data-do="tab:tr" id="tab-tr">Şarkı</button>
+          <button class="btn" data-do="tab:al" id="tab-al">Albüm</button>
+          <button class="btn" data-do="tab:sh" id="tab-sh">Podcast</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <input type="search" id="q" placeholder="Ara" aria-label="Listede ara" autocomplete="off">
+        <div class="seg" role="group" aria-label="Sıralama ölçütü">
+          <button class="btn" data-do="metric:ms" id="me-ms">Süre</button>
+          <button class="btn" data-do="metric:n" id="me-n">Dinleme</button>
+        </div>
+        <span class="k" id="top-k"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="more"><button class="btn" id="more" data-do="more">Daha fazla</button></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Hikâyeler</h2><div class="seg" id="story-tabs" role="group" aria-label="Hikâye seç"></div></div>
+      <div class="strip strip-lg" id="story"></div>
+    </div>
+  </section>
+
+  <div class="chap gut" id="zaman"><div class="in"><span class="chap-l">B</span><b>ZAMAN</b></div></div>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Zaman nehri</h2><span class="k">ilk 8 sanatçı, aylık</span></div>
+      <div class="stream" id="stream"></div>
+      <div class="xax" id="stream-x"></div>
+      <div class="legend" id="stream-leg"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head">
+        <h2>Ayın kapağı</h2>
+        <div class="seg" role="group" aria-label="Izgara türü">
+          <button class="btn" data-do="months:l" id="mo-l">Albüm</button>
+          <button class="btn" data-do="months:a" id="mo-a">Sanatçı</button>
+        </div>
+      </div>
+      <div class="mg" id="months"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Yıldan yıla ilk 8</h2></div>
+      <div id="bump"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head">
+        <h2>Takvim</h2>
+        <div class="tools">
+          <label for="daypick" class="sr">Tarih seç</label>
+          <input type="date" id="daypick">
+          <button class="btn" data-do="randomDay">Rastgele gün</button>
+          <button class="btn" data-do="bestDay">En yoğun gün</button>
+        </div>
+      </div>
+      <div class="scroll-x"><div class="cal-wall" id="cal"></div></div>
+      <div class="scale" id="cal-scale"></div>
+      <div class="otd" id="otd"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in clockwrap">
+      <div>
+        <div class="head"><h2>Günün plağı</h2></div>
+        <div class="clock" id="clock"></div>
+        <p class="note">Dıştan içe: Pazartesi → Pazar</p>
+        <div id="clock-table"></div>
+      </div>
+      <div>
+        <div class="parts" id="parts"></div>
+        <div class="wk" id="week"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Saat ritmi</h2><span class="k">yıllara göre günün dağılımı</span></div>
+      <div class="ridge" id="ridge"></div>
+      <div class="xax xax-ridge" id="ridge-x"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Kilometre taşları</h2></div>
+      <div class="miles" id="miles"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in disc">
+      <div>
+        <h2>Keşif</h2>
+        <div class="disc-n" id="disc-n"></div>
+      </div>
+      <div id="disc"></div>
+    </div>
+  </section>
+
+  <div class="chap gut" id="aliskanlik"><div class="in"><span class="chap-l"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg></span><b>ALIŞKANLIK</b></div></div>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="rings" id="rings"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Başladı → bitti</h2></div>
+      <div id="flow"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Atlama ve karışık</h2></div>
+      <div id="beh"></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in">
+      <div class="head"><h2>Cihazlar</h2></div>
+      <div class="scroll-x"><div class="devs" id="devs"></div></div>
+    </div>
+  </section>
+
+  <section class="sec gut">
+    <div class="in two">
+      <div>
+        <div class="head"><h2>Ülkeler</h2></div>
+        <div id="cc"></div>
+        <p class="note">IP adresine göre, VPN kullanımı da buraya yansır.</p>
+      </div>
+      <div>
+        <div class="head"><h2>Ne dinledin</h2></div>
+        <div id="med"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="chap gut" id="perde"><div class="in"><span class="chap-l"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 4l9 10H3z M3 17h18v3H3z" fill="currentColor"/></svg></span><b>PERDE ARKASI</b><span class="k" id="bs-k"></span></div></div>
+
+  <section class="sec gut">
+    <div class="in bento" id="bs"></div>
+  </section>
+</main>
+
+<footer class="gut"><div class="in">
+  <details class="method"><summary>Nasıl hesaplandı?</summary><ul id="method"></ul></details>
+</div></footer>
+</div>
+
+<dialog id="dlg" aria-label="Ayrıntı"><div class="dg" id="dg"></div></dialog>
+<div id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script id="data" type="application/json">__DATA__</script>
+<script>const D=JSON.parse(document.getElementById('data').textContent);document.getElementById('data').remove();</script>
+<script>/*__JS__*/</script>
